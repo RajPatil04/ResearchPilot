@@ -1,0 +1,125 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --bg-main: #080d1a;
+    --bg-sidebar: #0e1528;
+    --bg-panel: #111b30;
+    --bg-elevated: #17243a;
+    --border-main: #26344d;
+    --border-focus: #3b82f6;
+    --accent-blue: #2563eb;
+    --accent-cyan: #38bdf8;
+    --text-primary: #f1f5f9;
+    --text-secondary: #94a3b8;
+    --text-muted: #64748b;
+  }
+
+  body {
+    background-color: var(--bg-main);
+    color: var(--text-primary);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Inter, Helvetica, Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+  }
+}
+
+/* Custom dark scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #080d1a;
+}
+::-webkit-scrollbar-thumb {
+  background: #26344d;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #3b82f6;
+}
+
+/* Animations */
+@keyframes pulseGlow {
+  0%, 100% {
+    box-shadow: 0 0 12px rgba(56, 189, 248, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(56, 189, 248, 0.7);
+  }
+}
+
+.pulse-glow {
+  animation: pulseGlow 2.5s infinite;
+}
+
+/* Prose/markdown formatting inside research bubbles */
+.prose-research h1, .prose-research h2, .prose-research h3, .prose-research h4 {
+  color: #ffffff;
+  font-weight: 700;
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+  letter-spacing: -0.01em;
+}
+.prose-research h1 { font-size: 1.35rem; border-bottom: 1px solid #26344d; padding-bottom: 0.35rem; }
+.prose-research h2 { font-size: 1.15rem; color: #38bdf8; }
+.prose-research h3 { font-size: 1rem; color: #93c5fd; }
+.prose-research p { margin-bottom: 0.75rem; line-height: 1.6; }
+.prose-research ul, .prose-research ol { padding-left: 1.25rem; margin-bottom: 0.75rem; }
+.prose-research li { margin-bottom: 0.35rem; line-height: 1.5; }
+.prose-research code {
+  background: #0e1528;
+  color: #38bdf8;
+  padding: 0.15rem 0.4rem;
+  border-radius: 4px;
+  font-size: 0.85em;
+  border: 1px solid #26344d;
+}
+.prose-research pre {
+  background: #0a0f1d;
+  border: 1px solid #26344d;
+  border-radius: 8px;
+  padding: 0.85rem;
+  overflow-x: auto;
+  margin: 0.75rem 0;
+}
+.prose-research pre code {
+  background: transparent;
+  border: none;
+  padding: 0;
+  color: #e2e8f0;
+}
+.prose-research blockquote {
+  border-left: 3px solid #38bdf8;
+  padding-left: 0.85rem;
+  margin-left: 0;
+  color: #cbd5e1;
+  font-style: italic;
+  background: rgba(56, 189, 248, 0.05);
+  padding-top: 0.35rem;
+  padding-bottom: 0.35rem;
+  border-radius: 0 6px 6px 0;
+}
+.prose-research table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1rem 0;
+  font-size: 0.88rem;
+}
+.prose-research th {
+  background: #17243a;
+  color: #38bdf8;
+  text-align: left;
+  padding: 0.5rem 0.75rem;
+  border: 1px solid #26344d;
+}
+.prose-research td {
+  padding: 0.45rem 0.75rem;
+  border: 1px solid #26344d;
+  background: #0e1528;
+}
+.prose-research tr:nth-child(even) td {
+  background: #111b30;
+}
